@@ -1,13 +1,80 @@
+<!-- Index is always supposed to be the Home Page -->
+<!DOCTYPE html>
 <html>
+<head>
+  <title>Q-UP Home Page</title>
+</head>
+<body>
+  <h1>Welcome to the NY Style Barbershop</h1>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <!-- <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">Previous</a>
+      </li> -->
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <!-- <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li> -->
+    </ul>
+  </nav>
+
+  <form action="/2" method="POST">
+    <div class="container">
+
+      <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="checkbox" checked autocomplete="off"> Haircut
+        </label>
+      </div>
+
+      <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="checkbox" checked autocomplete="off"> Head Shave
+        </label>
+      </div>
+
+      <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="checkbox" checked autocomplete="off"> Beard Trim
+        </label>
+      </div>
+
+      <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="checkbox" checked autocomplete="off"> Beard Shave
+        </label>
+      </div>
+
+    </div>
+  </form>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<html>
+<link rel="stylesheet" href="/stylesheet/index.css">
   <head>
     <title> Q-UP </title>
   </head>
     <body>
-      <style>
+      <!-- <style>
         body {
           background-color: #1a1a1a;
         }
-      </style>
+      </style> -->
 
       <style>
       .header {
@@ -22,6 +89,7 @@
       <div class="header">
         <h1>Welcome to the NY Sytle Barbershop</h1>
       </div>
+
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
           <!-- <li class="page-item disabled">
@@ -42,7 +110,7 @@
           margin-left: 175px;
           margin-right: auto;
           /*margin-bottom: auto;*/
-          margin-top: 0px;
+          /*margin-top: auto;*/
           z-index: 1;
           position: absolute;
           width: 70%;
@@ -70,15 +138,6 @@
           margin: 65px;
       }
       </style>
-
-
-
-
-  
-
-  
-  
-  
 
 <form action="/2" method="POST">
       <div class="container">
