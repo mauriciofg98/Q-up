@@ -10,16 +10,17 @@ else
   DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/app.db")
 end
 
-class Video
+class Barber
 	include DataMapper::Resource
 
 	property :id, Serial
+	property :name, Text
 	#fill in the rest
 end
 
 DataMapper.finalize
 User.auto_upgrade!
-Video.auto_upgrade!
+Barber.auto_upgrade!
 
 #make an admin user if one doesn't exist!
 if User.all(administrator: true).count == 0
@@ -40,5 +41,16 @@ end
 # if they are not signed in, current_user will be nil
 
 get "/" do
+	@barbers = Barber.all
 	erb :index
+end
+
+get "/admin" do 
+	redirect "/login"
+end
+
+get "/admin1" do
+	
+
+	erb :admin
 end
