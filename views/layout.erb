@@ -14,7 +14,30 @@
 	
 </head>
 <body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 105a85adc3b6a6a316005370b6959e85df74a60c
 	<main role="main">
+
+		<div class="container">
+			<% if flash[:success] %>
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+				  <%= flash[:success] %>
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				    <span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+			<% end %>
+
+			<% if flash[:error] %>
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				  <%= flash[:error] %>
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				    <span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+			<% end %>
 
 		<%= yield %>
 
