@@ -4,7 +4,7 @@ require_relative "user.rb"
 enable :sessions
 
 get "/login" do
-	erb :"authentication/login"
+	erb :"authentication/login", :layout => :admin_layout
 end
 
 
@@ -16,7 +16,7 @@ post "/process_login" do
 
 	if(user && user.login(password))
 		session[:user_id] = user.id
-		redirect "/"
+		redirect "/admin1"
 	else
 		erb :"authentication/invalid_login"
 	end

@@ -1,5 +1,8 @@
 require "sinatra"
 require_relative "authentication.rb"
+require "sinatra/flash"
+
+enable :sessions
 
 # need install dm-sqlite-adapter
 # if on heroku, use Postgres database
@@ -10,16 +13,17 @@ else
   DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/app.db")
 end
 
-class Video
+class Barber
 	include DataMapper::Resource
 
 	property :id, Serial
+	property :name, Text
 	#fill in the rest
 end
 
 DataMapper.finalize
 User.auto_upgrade!
-Video.auto_upgrade!
+Barber.auto_upgrade!
 
 #make an admin user if one doesn't exist!
 if User.all(administrator: true).count == 0
@@ -40,5 +44,44 @@ end
 # if they are not signed in, current_user will be nil
 
 get "/" do
+	@barbers = Barber.all
 	erb :index
+end
+
+get "/one" do
+
+end
+
+get "/two" do 
+
+end
+
+get "/admin" do 
+	redirect "/login"
+end
+
+get "/admin1" do
+	flash[:success] = "succesfully logged in"
+	erb :admin, :layout => :admin_layout
+end
+
+post "/admin1/addbarber" do 
+	if params["name"]
+		b = Barber.new
+		b.name = params["name"]
+	
+		b.save
+		return "succesful"
+	else
+		return "missing information"
+	end
+end	
+
+get "/admin1/new" do
+	authenticate!
+	if current_user.administrator 
+	erb :new_barber
+else 
+	redirect "/login"
+end
 end
