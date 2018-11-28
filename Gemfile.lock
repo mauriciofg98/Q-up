@@ -7,7 +7,7 @@ GEM
     bcrypt-ruby (3.1.5-x86-mingw32)
       bcrypt (>= 3.1.3)
     builder (3.2.3)
-    capybara (3.11.1)
+    capybara (3.12.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -74,11 +74,7 @@ GEM
       data_objects (= 0.10.17)
     do_sqlite3 (0.10.17-x86-mingw32)
       data_objects (= 0.10.17)
-<<<<<<< HEAD
-    faraday (0.15.3)
-=======
     faraday (0.15.4)
->>>>>>> 105a85adc3b6a6a316005370b6959e85df74a60c
       multipart-post (>= 1.2, < 3)
     fastercsv (1.5.5)
     json (1.8.6)
@@ -126,26 +122,16 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.4)
       tilt (~> 2.0)
-<<<<<<< HEAD
-=======
     sinatra-flash (0.3.0)
       sinatra (>= 1.0.0)
->>>>>>> 105a85adc3b6a6a316005370b6959e85df74a60c
     sqlite3 (1.3.13-x86-mingw32)
     sqlite3-ruby (1.3.3)
       sqlite3 (>= 1.3.3)
     stringex (1.5.1)
-<<<<<<< HEAD
-    stripe (4.0.3)
-      faraday (~> 0.13)
-      net-http-persistent (~> 3.0)
-    tilt (2.0.8)
-=======
     stripe (4.2.0)
       faraday (~> 0.13)
       net-http-persistent (~> 3.0)
     tilt (2.0.9)
->>>>>>> 105a85adc3b6a6a316005370b6959e85df74a60c
     uuidtools (2.1.5)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
@@ -169,16 +155,9 @@ DEPENDENCIES
   rack_session_access
   rspec
   sinatra
-<<<<<<< HEAD
-=======
   sinatra-flash
->>>>>>> 105a85adc3b6a6a316005370b6959e85df74a60c
   sqlite3-ruby
   stripe
 
 BUNDLED WITH
-<<<<<<< HEAD
    1.16.6
-=======
-   1.17.1
->>>>>>> 105a85adc3b6a6a316005370b6959e85df74a60c

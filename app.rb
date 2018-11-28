@@ -45,15 +45,17 @@ end
 
 get "/" do
 	@barbers = Barber.all
-	erb :index
+	erb :style
 end
 
 get "/one" do
 
+ 	erb :employees
 end
 
 get "/two" do 
 
+ 	erb :info
 end
 
 get "/admin" do 
