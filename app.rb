@@ -51,7 +51,6 @@ end
 post "/one" do
 	hairStyle = params["hairstyle"]
 	beardStyle = params["beardstyle"]
-	#return "Yes master"
 	erb :index2
 end
 
@@ -60,8 +59,8 @@ post "/two" do
 	erb :index3
 end
 
-get "/three" do
-
+post "/three" do
+	erb :index4
 end
 
 get "/admin" do 
