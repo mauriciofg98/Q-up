@@ -4,7 +4,7 @@ require_relative "user.rb"
 enable :sessions
 
 get "/login" do
-	erb :"authentication/login"
+	erb :"authentication/login", :layout => :admin_layout
 end
 
 

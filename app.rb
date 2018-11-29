@@ -48,12 +48,40 @@ get "/" do
 	erb :index
 end
 
+get "/one" do
+
+end
+
+get "/two" do 
+
+end
+
 get "/admin" do 
 	redirect "/login"
 end
 
 get "/admin1" do
-	
 	flash[:success] = "succesfully logged in"
-	erb :admin
+	erb :admin, :layout => :admin_layout
+end
+
+post "/admin1/addbarber" do 
+	if params["name"]
+		b = Barber.new
+		b.name = params["name"]
+	
+		b.save
+		return "succesful"
+	else
+		return "missing information"
+	end
+end	
+
+get "/admin1/new" do
+	authenticate!
+	if current_user.administrator 
+	erb :new_barber
+else 
+	redirect "/login"
+end
 end
