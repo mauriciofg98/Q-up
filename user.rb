@@ -12,4 +12,3 @@ class User
     	return self.password == password
     end
 end
-
