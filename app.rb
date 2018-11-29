@@ -1,5 +1,8 @@
 require "sinatra"
 require_relative "authentication.rb"
+require "sinatra/flash"
+
+enable :sessions
 
 # need install dm-sqlite-adapter
 # if on heroku, use Postgres database
@@ -51,6 +54,6 @@ end
 
 get "/admin1" do
 	
-
+	flash[:success] = "succesfully logged in"
 	erb :admin
 end
