@@ -45,7 +45,7 @@ end
 
 get "/" do
 	@barbers = Barber.all
-	erb :style
+	erb :index
 end
 
 get "/one" do
