@@ -28,7 +28,7 @@ get "/logout" do
 end
 
 get "/sign_up" do
-	erb :"authentication/sign_up"
+	erb :"authentication/sign_up", :layout => :admin_layout
 end
 
 
