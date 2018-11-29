@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Q-UP Page 2</title>
+</head>
+<body>
+      <style>
+        body {
+          background-color: #1a1a1a;
+        }
+        .header {
+          text-align: center;
+          color: white;
+          font-size: 20px;
+          margin-bottom: 40px;
+        }
+        .motto {
+          text-align: center;
+          color: white;
+        }
+        .center {
+          display: block;
+          margin-left: 135px;
+          margin-right: auto;
+          z-index: 1;
+          position: absolute;
+          width: 70%;
+          height: 79%;
+          opacity: 0.5;
+          filter: alpha(opacity=50); /* For IE8 and earlier */
+        }
+        .container {
+         z-index: 2;
+         position: relative;
+        }
+        .dropdown {
+        margin: 65px;
+        }
+      </style>
+
+      <div class="header">
+        <h1>Welcome to the NY Sytle Barbershop</h1>
+      </div>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item"><a class="page-link" href="/">1</a></li>
+          <li class="page-item"><a class="page-link" href="/one">2</a></li>
+          <li class="page-item"><a class="page-link" href="/two">3</a></li>
+        </ul>
+      </nav>
+
+      <div class="motto">
+        <h4>Pick your Barber!</h4>
+      </div>
+
+      <div class="center">
+        <img src="https://media.istockphoto.com/photos/flag-of-the-united-states-picture-id524055319?k=6&m=524055319&s=612x612&w=0&h=xEzJMJc64qy7FbJxqHKbqYIaIiT-X8BnzezaTytRsxA=" alt="American Flag" class="center" class="background">
+      </div>
+
+    <form action="/two" method="POST">
+    	<br><br><br><br><br>
+    	<div class="container">
+        	<div style = "text-align: center; class = "jumbotron">
+          		<div class="dropdown">
+            		<select name="barber">
+              			<option value="barber1">Panfilo Guadalajara</option>
+              			<option value="barber2">Juan Jose Rodriguez</option>
+              			<option value="barber3">Demitri Jaques</option>
+              			<option value="barber3">Reginald Von Heusenshmeigel</option>
+            		</select>
+          		</div>
+				<br><br><br><br><br><br>
+        		<div>
+            		<input type="submit" name="Next">
+          		</div>
+        	</div>
+      	</div>
+    </form>
+</body>
+</html>

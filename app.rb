@@ -48,11 +48,19 @@ get "/" do
 	erb :index
 end
 
-get "/one" do
-
+post "/one" do
+	hairStyle = params["hairstyle"]
+	beardStyle = params["beardstyle"]
+	#return "Yes master"
+	erb :index2
 end
 
-get "/two" do 
+post "/two" do 
+	barberChoice = params["barber"]
+	erb :index3
+end
+
+get "/three" do
 
 end
 

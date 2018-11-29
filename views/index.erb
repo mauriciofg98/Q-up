@@ -1,90 +1,44 @@
-<!-- Index is always supposed to be the Home Page -->
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Q-UP Home Page</title>
-</head>
-<body>
-  <h1>Welcome to the NY Style Barbershop</h1>
-
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      <!-- <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1">Previous</a>
-      </li> -->
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <!-- <li class="page-item">
-        <a class="page-link" href="#">Next</a>
-      </li> -->
-    </ul>
-  </nav>
-
-  <form action="/2" method="POST">
-    <div class="container">
-
-      <div class="btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
-          <input type="checkbox" checked autocomplete="off"> Haircut
-        </label>
-      </div>
-
-      <div class="btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
-          <input type="checkbox" checked autocomplete="off"> Head Shave
-        </label>
-      </div>
-
-      <div class="btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
-          <input type="checkbox" checked autocomplete="off"> Beard Trim
-        </label>
-      </div>
-
-      <div class="btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
-          <input type="checkbox" checked autocomplete="off"> Beard Shave
-        </label>
-      </div>
-
-    </div>
-  </form>
-
-
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
 <html>
 <link rel="stylesheet" href="/stylesheet/index.css">
   <head>
-    <title> Q-UP </title>
+    <title>Q-UP Home Page</title>
   </head>
     <body>
-      <!-- <style>
+
+      <style>
         body {
           background-color: #1a1a1a;
         }
-      </style> -->
-
-      <style>
-      .header {
-        text-align: center;
-        color: white;
-        font-size: 20px;
-        margin-bottom: 40px;
-      }
+        .header {
+          text-align: center;
+          color: white;
+          font-size: 20px;
+          margin-bottom: 40px;
+        }
+        .motto {
+          text-align: center;
+          color: white;
+        }
+        .center {
+          display: block;
+          margin-left: 135px;
+          margin-right: auto;
+          z-index: 1;
+          position: absolute;
+          width: 70%;
+          height: 80%;
+          opacity: 0.5;
+          filter: alpha(opacity=50); /* For IE8 and earlier */
+        }
+        .container {
+         z-index: 2;
+         position: relative;
+        }
+        .dropdown {
+        margin: 65px;
+        }
       </style>
-
 
       <div class="header">
         <h1>Welcome to the NY Sytle Barbershop</h1>
@@ -92,85 +46,70 @@
 
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
-          <!-- <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-          </li> -->
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <!-- <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li> -->
+          <li class="page-item"><a class="page-link" href="/">1</a></li>
+          <li class="page-item"><a class="page-link" href="/one">2</a></li>
+          <li class="page-item"><a class="page-link" href="/two">3</a></li>
         </ul>
       </nav>
 
-      <style>
-      .center {
-          display: block;
-          margin-left: 175px;
-          margin-right: auto;
-          /*margin-bottom: auto;*/
-          /*margin-top: auto;*/
-          z-index: 1;
-          position: absolute;
-          width: 70%;
-          height: 75%;
-          opacity: 0.5;
-          filter: alpha(opacity=50); /* For IE8 and earlier */
+      <div class="motto">
+        <h4>Choose your style!</h4>
+      </div>
 
-      }
-      </style>
       <div class="center">
         <img src="https://media.istockphoto.com/photos/flag-of-the-united-states-picture-id524055319?k=6&m=524055319&s=612x612&w=0&h=xEzJMJc64qy7FbJxqHKbqYIaIiT-X8BnzezaTytRsxA=" alt="American Flag" class="center" class="background">
       </div>
 
-      <style>
-      .container {
-         /*position: relative;*/
-         z-index: 2;
-         position: relative;
-      }
-      </style>
-
-      <style>
-      .btn-group-toggle {
-          /*display: block;*/
-          margin: 65px;
-      }
-      </style>
-
-<form action="/2" method="POST">
+      <form action="/one" method="POST">
+      <br>
+      <br>
       <div class="container">
         <div style = "text-align: center; class = "jumbotron">
-          <div class="btn-group-toggle" data-toggle="buttons">
+          <div class="dropdown">
+            <select name="hairstyle">
+              <option value="haircut">Haircut</option>
+              <option value="headshave">Head Shave</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <br>
+          <div class="dropdown">
+            <select name="beardstyle">
+              <option value="beardtrim">Beard Trim</option>
+              <option value="beardshave">Beard Shave</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <br>
+          <!-- <div class="btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary active">
-              <!-- <input type="checkbox" name="Head Shave"> -->
               <input type="checkbox" checked autocomplete="off"> Haircut
             </label>
           </div>
 
           <div class="btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary active">
-              <!-- <input type="checkbox" name="Head Shave"> -->
               <input type="checkbox" checked autocomplete="off"> Head Shave
             </label>
           </div>
 
           <div class="btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary active">
-              <!-- <input type="checkbox" name="Beard Trim"> -->
               <input type="checkbox" checked autocomplete="off"> Beard Trim
             </label>
           </div>
 
           <div class="btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary active">
-              <!-- <input type="checkbox" name="Beard Shave"> -->
               <input type="checkbox" checked autocomplete="off"> Beard Shave
             </label>
+          </div> -->
+          <br>
+          <div>
+            <input type="submit" name="Next">
           </div>
-          <input type="submit" name="Next">
         </div>
       </div>
+    </form>
   </body>
 </html>
