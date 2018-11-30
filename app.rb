@@ -91,4 +91,3 @@ get "/admin1/new" do
 else 
 	redirect "/login"
 end
-end

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="/">YourApp</a>
+  <a class="navbar-brand" href="/">Q-up</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,14 +14,18 @@
         <li class="nav-item">
           <a class="nav-link" href="/logout">Logout</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin1/new">Add Barber</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin1/delete">Delete Barber</a>
+        </li>
+
       <% else %>
         <li class="nav-item">
           <a class="nav-link" href="/login">Login</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/sign_up">Sign Up</a>
-        </li>
-      <% end %>
+              <% end %>
 
 
     </ul>
