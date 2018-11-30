@@ -61,12 +61,12 @@
         <img src="https://media.istockphoto.com/photos/flag-of-the-united-states-picture-id524055319?k=6&m=524055319&s=612x612&w=0&h=xEzJMJc64qy7FbJxqHKbqYIaIiT-X8BnzezaTytRsxA=" alt="American Flag" class="center" class="background">
       </div>
 
-    <form action="/two" method="POST">
     	<br><br><br><br><br>
     	<div class="container">
         	<div style = "text-align: center; class = "jumbotron">
           		<div class="container">
                 <% @barbers.each do |b| %>
+                  <a href="/3/<%= b.id%>" class = "btn btn-danger">choose </a>
                   <%= b.name %>
                   <br><br>
                 <% end %>
@@ -77,6 +77,5 @@
           		</div>
         	</div>
       	</div>
-    </form>
 </body>
 </html>
