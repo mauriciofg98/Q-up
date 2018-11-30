@@ -48,16 +48,10 @@ get "/" do
 	erb :index
 end
 
-<<<<<<< HEAD
-get "/one" do
-
- 	erb :employees
-=======
 post "/one" do
 	hairStyle = params["hairstyle"]
 	beardStyle = params["beardstyle"]
 	erb :index2
->>>>>>> home_page
 end
 
 post "/two" do 
@@ -65,12 +59,8 @@ post "/two" do
 	erb :index3
 end
 
-<<<<<<< HEAD
- 	erb :info
-=======
 post "/three" do
 	erb :index4
->>>>>>> home_page
 end
 
 get "/admin" do 
