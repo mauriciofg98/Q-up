@@ -32,6 +32,7 @@
         .container {
          z-index: 2;
          position: relative;
+         color: white;
         }
         .dropdown {
         margin: 65px;
@@ -64,14 +65,12 @@
     	<br><br><br><br><br>
     	<div class="container">
         	<div style = "text-align: center; class = "jumbotron">
-          		<div class="dropdown">
-            		<select name="barber">
-              			<option value="barber1">Panfilo Guadalajara</option>
-              			<option value="barber2">Juan Jose Rodriguez</option>
-              			<option value="barber3">Demitri Jaques</option>
-              			<option value="barber3">Reginald Von Heusenshmeigel</option>
-            		</select>
-          		</div>
+          		<div class="container">
+                <% @barbers.each do |b| %>
+                  <%= b.name %>
+                  <br><br>
+                <% end %>
+
 				<br><br><br><br><br><br>
         		<div>
             		<input type="submit" name="Next">

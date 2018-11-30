@@ -34,6 +34,9 @@ if User.all(administrator: true).count == 0
 	u.save
 end
 
+hello = Barber.new
+hello.name = "isai maldonado"
+hello.save
 #the following urls are included in authentication.rb
 # GET /login
 # GET /logout
@@ -44,28 +47,45 @@ end
 # if they are not signed in, current_user will be nil
 
 get "/" do
-	@barbers = Barber.all
+	
 	erb :index
 end
 
 post "/one" do
+<<<<<<< HEAD
 	hairStyle = params["hairstyle"]
 	beardStyle = params["beardstyle"]
 	erb :index2
 end
 
+=======
+	@barbers = Barber.all
+	erb :index2
+end
+>>>>>>> Q
 post "/two" do 
+	
 	barberChoice = params["barber"]
 	erb :index3
 end
 
 post "/three" do
+<<<<<<< HEAD
 	erb :index4
+=======
+	b = Barber.get(params["id"])
+ 	erb :info
+>>>>>>> Q
+end
+post "/queue" do
+	
 end
 
 get "/admin" do 
 	redirect "/login"
 end
+
+
 
 get "/admin1" do
 	flash[:success] = "succesfully logged in"
