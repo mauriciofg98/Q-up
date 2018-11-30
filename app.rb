@@ -52,17 +52,9 @@ get "/" do
 end
 
 post "/one" do
-<<<<<<< HEAD
-	hairStyle = params["hairstyle"]
-	beardStyle = params["beardstyle"]
-	erb :index2
-end
-
-=======
 	@barbers = Barber.all
 	erb :index2
 end
->>>>>>> Q
 post "/two" do 
 	
 	barberChoice = params["barber"]
@@ -70,12 +62,9 @@ post "/two" do
 end
 
 post "/three" do
-<<<<<<< HEAD
-	erb :index4
-=======
 	b = Barber.get(params["id"])
  	erb :info
->>>>>>> Q
+
 end
 post "/queue" do
 	
@@ -107,7 +96,7 @@ end
 get "/admin1/new" do
 	authenticate!
 	if current_user.administrator 
-	erb :new_barber
+	erb :new_barber, :layout => :admin_layout
 else 
 	redirect "/login"
 end
