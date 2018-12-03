@@ -13,6 +13,7 @@
           color: white;
           font-size: 20px;
           margin-bottom: 40px;
+          margin-top: 40px;
         }
         .motto {
           text-align: center;
@@ -66,11 +67,13 @@
     	<div class="container">
         	<div style = "text-align: center; class = "jumbotron">
           		<div class="container">
-                <% @barbers.each do |b| %>
-                  <%= b.name %>
-                  <br><br>
-                <% end %>
-
+                <div class="dropdown">
+                  <select name="barber">
+                    <% @barbers.each do |b| %>
+                      <option value="barber"><%= b.name %></option><br><br>
+                    <% end %>
+                  </select>
+                </div>
 				<br><br><br><br><br><br>
         		<div>
             		<input type="submit" name="Next">

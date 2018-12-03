@@ -3,10 +3,8 @@
 		<h4>Choose which barbers to delete.</h4>
 	</div>
 	<br>
-
 	<% @barbers.each do |b| %>
     <%= b.name %>
-
     <div class="radio">
   		<label>
   			<input type="radio" name="optradio" checked>
@@ -15,12 +13,6 @@
 
     <br><br>
     <% end %>
-
-	<div>
-		<label>Full Name</label>
-		<input type="text" name="name">
-	</div>
-	<br>
 	<input type="submit" value="Submit">
 	<br>
 </form>

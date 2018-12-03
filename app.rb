@@ -62,10 +62,9 @@ post "/two" do
 end
 
 post "/three" do
-	b = Barber.get(params["id"])
- 	erb :info
-
+ 	erb :index4
 end
+
 post "/queue" do
 	
 end
@@ -73,7 +72,6 @@ end
 get "/admin" do 
 	redirect "/login"
 end
-
 
 
 get "/admin1" do
