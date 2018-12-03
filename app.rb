@@ -19,13 +19,29 @@ class Barber
 
 	property :id, Serial
 	property :name, Text
-	q = Queue.new
 	#fill in the rest
+	def wait_list
+		return Queueitem.all(bid: id)
+	end
 end
+
+class Queueitem
+	include DataMapper::Resource
+
+	property :id, Serial
+	property :name, Text
+	property :bid, Integer
+
+	def barber 
+		return Barber.get(bid)
+	end
+end
+
 
 DataMapper.finalize
 User.auto_upgrade!
 Barber.auto_upgrade!
+Queueitem.auto_upgrade!
 
 #make an admin user if one doesn't exist!
 if User.all(administrator: true).count == 0
@@ -36,12 +52,6 @@ if User.all(administrator: true).count == 0
 	u.save
 end
 
-customers = []
-
- do
-  queue = Queue.new
-  customers << queue
-end
 #the following urls are included in authentication.rb
 # GET /login
 # GET /logout
@@ -61,7 +71,13 @@ get "/Queue" do
 	beardtype = params["beardtype"]
 	b = Barber.get(params["id"])
 	n = params["name"]
-	customers[b.id] << n
+
+
+	q = Queueitem.new
+	q.name = n
+	q.bid = b.id
+	q.save
+
 	erb :index4
 end
 
@@ -96,9 +112,18 @@ else
 	redirect "/login"
 end
 end
-
-get "que" do
+get "/pop" do
 	b = Barber.get(1)
-	value = customers[b.id].pop
-	return value
+	@c = b.wait_list
+	list = @c
+	if list != nil
+		list[0].destroy
+	end
+end
+
+get "/que" do
+	b = Barber.get(1)
+	@c = b.wait_list
+	list = @c.map {|c| c.name}.join("<br/>")
+	return "Queue:" + list.to_s
 end
