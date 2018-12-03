@@ -1,6 +1,7 @@
 require "sinatra"
 require_relative "authentication.rb"
 require "sinatra/flash"
+require 'thread'
 
 enable :sessions
 
@@ -18,6 +19,7 @@ class Barber
 
 	property :id, Serial
 	property :name, Text
+	q = Queue.new
 	#fill in the rest
 end
 
@@ -34,6 +36,12 @@ if User.all(administrator: true).count == 0
 	u.save
 end
 
+customers = []
+
+ do
+  queue = Queue.new
+  customers << queue
+end
 #the following urls are included in authentication.rb
 # GET /login
 # GET /logout
@@ -44,25 +52,16 @@ end
 # if they are not signed in, current_user will be nil
 
 get "/" do
-	
+	@barbers = Barber.all
 	erb :index
 end
 
-post "/2" do
-
-	@barbers = Barber.all
-	erb :index2
-end
-post "/3/:id" do 
+get "/Queue" do
+	hairtype = params["hairtype"]
+	beardtype = params["beardtype"]
 	b = Barber.get(params["id"])
-	erb :index3
-end
-
-get "/queue/:id" do
-	b = Barber.get(params["id"])
-	n = get(params["name"])
-
-	b.Q << n
+	n = params["name"]
+	customers[b.id] << n
 	erb :index4
 end
 
@@ -96,4 +95,10 @@ get "/admin1/new" do
 else 
 	redirect "/login"
 end
+end
+
+get "que" do
+	b = Barber.get(1)
+	value = customers[b.id].pop
+	return value
 end
