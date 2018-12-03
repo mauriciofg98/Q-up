@@ -45,7 +45,7 @@ end
 
 get "/" do
 	
-	erb :index
+	erb :wizard
 end
 
 post "/2" do
