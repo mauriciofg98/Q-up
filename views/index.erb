@@ -116,9 +116,14 @@ button:hover {
   </div>
 
 
-  <div class="tab"><center>Choose your Barber:
+  <div class="tab">
+    <script>
+          $('.select1').select2();
+      </script>
+      <center>Choose your Barber:
     <p></center>
                 <select class="custom-select" id='barber.id' name='id' type='text' style="font-style:italic">
+                  <option value"" disabled selected>Pick a Barber / Elija un Barbero:</option>
                   <% @barbers.each do |b| %>
                   <option value="<%= b.id%>"> <%= b.name %> </option>
                   <br><br>
