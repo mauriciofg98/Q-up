@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Q-UP Success</title>
-  <meta http-equiv="refresh" content="3;url=http://localhost:4567/" />
-</head>
-<body>
-	<style>
-        body {
-          background-color: #1a1a1a;
-        }
-        .motto {
-          margin-top: 300px;
-          margin-bottom: auto;
-          text-align: center;
-          color: white;
-        }
-      </style>
+<meta http-equiv = "refresh" content = "5;url=http://localhost:4567/"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+ {
+  box-sizing: border-box;
+}
 
-    <div class="motto">
-    	<h2>You have been successfully Queued Up! Please wait in the lobby.</h2>
-    </div>
+body {
+  background-color: #f1f1f1;
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+</style>
+<body>
+
+<form id="regForm" action="/Queue">
+  <b><h1>Thanks for Queuing-up, please wait for your turn.</h1></b>
+</form>
 </body>
 </html>
