@@ -6,7 +6,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
-* {
+ {
   box-sizing: border-box;
 }
 
@@ -87,47 +87,51 @@ button:hover {
 <body>
 
 <form id="regForm" action="/Queue">
-  <h1>Welcome to the NY Style Barberhhop!</h1>
+  <b><h1>Welcome to Q-up.</h1></b>
   <!-- One "tab" for each step in the form: -->
   <div class="tab">
+      <script>
+          $('.select2').select2();
+      </script>
+    <center><p> Hairstyle:</center>
+          <select class="custom-select" name="hairtype" list="Hair"  style="font-style:italic">
+            <option value="" disabled selected>Choose a service / Elija un servicio:</option>
+            <option value="Regular Cut">Regular Cut: $15</option>
+            <option value="Fade Cut">Fade Cut: $20</option>
+            <option value="Clean-Up">Clean-up: $10</option>
+            <option value="Full-Head Shave">Full-head shave: $15</option>
+            <option value="N/A">N/A</option>
+          </select>
+        </p>
 
-<script>
-    $('.select2').select2();
-</script>
-    <p> Hairstyle:
-      <input type="text" name="hairtype" list="Hair" placeholder="Haircut:" style="font-style:italic">
-      <datalist id="Hair">
-        <option value="Regular">
-        <option value="Fade">
-        <option value="Clean up">
-        <option value="Full Shave">
-      </datalist>
-    </p>
-    <p> Beardstyle:
-      <input type="text" name="beardtype" list="Beard" placeholder="Beard:" style="font-style:italic">
-      <datalist id="Beard">
-        <option value="Beardtrim ">
-        <option value="Razor Clean Up">
-        <option value="Shave">
-      </datalist>
-    </p>
+         <center><p> Beardstyle:</center>
+          <select class="custom-select" name="beardtype" list="Hair"  style="font-style:italic">
+            <option value="" disabled selected>Choose a service / Elija un servicio:</option>
+            <option value="Beardtrim">Beardtrim: $10</option>
+            <option value="Razor Clean-Up">Razor Clean-Up: $10</option>
+            <option value="Shave">Shave: $10</option>
+            <option value="N/A">N/A</option>
+          </select>
+        </p>
   </div>
-  <div class="tab">Choose your Barber:
-    <p>
-                <select id='barber.id' name='id' type='text'>
+
+
+  <div class="tab"><center>Choose your Barber:
+    <p></center>
+                <select class="custom-select" id='barber.id' name='id' type='text' style="font-style:italic">
                   <% @barbers.each do |b| %>
                   <option value="<%= b.id%>"> <%= b.name %> </option>
                   <br><br>
                   <% end %>
                 </select>
-</p>
+    </p>
   </div>
   <div class="tab">Enter your name:
      <input type="text" name="name">
   </div>
   <div style="overflow:auto;">
     <div style="float:right;">
-      <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
+      <br>
       <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
     </div>
   </div>
