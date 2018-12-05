@@ -121,9 +121,9 @@ get "/pop" do
 	end
 end
 
-get "/que" do
-	b = Barber.get(1)
-	@c = b.wait_list
-	list = @c.map {|c| c.name}.join("<br/>")
-	return "Queue:" + list.to_s
+post "/que" do
+	@barbers = Barber.all
+	#@c = b.wait_list
+	#list = @c.map {|c| c.name}.join("<br/>")
+	erb :view
 end

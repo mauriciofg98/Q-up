@@ -2,19 +2,23 @@
 <html>
 <body>
 
-<h2>A Nested List</h2>
-<p>List can be nested (lists inside lists):</p>
+<h2>  </h2>
+
 
 <ul>
-  <li>Coffee</li>
-  <li>Tea
-    <ul>
-      <li>Black tea</li>
-      <li>Green tea</li>
-    </ul>
-  </li>
-  <li>Milk</li>
-</ul>
+	<% @barbers.each do |b| %>
+   	<li> <%= b.name %> </li>
+   	 <% customers = b.wait_list %>
+     <ul>
+     	<% customers.each do |c| %>
+     	<li><%= c.name %></li>
+     	
+ <% end %>
+ <br>
+ <% end %>
+     </ul>
+
+ </ul>
 
 </body>
 </html>
