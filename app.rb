@@ -82,17 +82,18 @@ get "/Queue" do
 end
 
 get "/admin" do 
-	redirect "/login"
-end
-
-
-
-get "/admin1" do
-	flash[:success] = "succesfully logged in"
+	authenticate!
+	if current_user.administrator 
 	erb :admin, :layout => :admin_layout
+	#flash[:success] = "succesfully logged in"
+	end
+	#redirect "/login"
 end
 
-post "/admin1/addbarber" do 
+
+
+
+post "/admin/addbarber" do 
 	if params["name"]
 		b = Barber.new
 		b.name = params["name"]
@@ -104,14 +105,36 @@ post "/admin1/addbarber" do
 	end
 end	
 
-get "/admin1/new" do
+get "/admin/new" do
 	authenticate!
 	if current_user.administrator 
 	erb :new_barber, :layout => :admin_layout
-else 
+	else 
+	redirect "/login"
+	end
+end
+
+get "/admin/delete/:id" do
+	authenticate!
+	if current_user.administrator 
+		b = Barber.get(params[:id])
+		b.destroy
+		redirect "/admin/delete"
+	else
 	redirect "/login"
 end
 end
+
+get "/admin/delete" do
+	authenticate!
+	if current_user.administrator 
+		@barbers = Barber.all
+		erb :delete_barber, :layout => :admin_layout
+	else
+	redirect "/login"
+end
+end
+
 get "/pop/:id" do
 	c = Queueitem.get(params[:id])
 	if c != nil
@@ -121,7 +144,6 @@ get "/pop/:id" do
 end
 
 get "/que" do
-
 	@barbers = Barber.all
 	erb :view
 end

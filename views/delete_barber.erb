@@ -1,0 +1,15 @@
+<form action="/admin/addbarber" method="POST">
+	<div>
+		<h4>Choose a Barber to delete</h4>
+	</div>
+	<br>
+	<div>
+		<ul class="list-group">
+		<% @barbers.each do |b| %>
+   			<li> <a href = "/admin/delete/<%= b.id %>" class= "list-group-item"><%= b.name %> </a>  </li>
+ 		<% end %>
+		</ul>
+	</div>
+	<br>
+	<br>
+</form>
