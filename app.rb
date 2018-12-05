@@ -112,18 +112,16 @@ else
 	redirect "/login"
 end
 end
-get "/pop" do
-	b = Barber.get(1)
-	@c = b.wait_list
-	list = @c
-	if list != nil
-		list[0].destroy
+get "/pop/:id" do
+	c = Queueitem.get(params[:id])
+	if c != nil
+		c.destroy
 	end
+	redirect "/que"
 end
 
-post "/que" do
+get "/que" do
+
 	@barbers = Barber.all
-	#@c = b.wait_list
-	#list = @c.map {|c| c.name}.join("<br/>")
 	erb :view
 end

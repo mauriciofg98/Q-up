@@ -7,11 +7,11 @@
 
 <ul>
 	<% @barbers.each do |b| %>
-   	<li> <%= b.name %> </li>
+   	<li> <%= b.name %>  </li>
    	 <% customers = b.wait_list %>
      <ul>
      	<% customers.each do |c| %>
-     	<li><%= c.name %></li>
+     	<li> <a href = "/pop/<%= c.id %>" class= "btn"> Delete </a> <%= c.name %></li>
      	
  <% end %>
  <br>
