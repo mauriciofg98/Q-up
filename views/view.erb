@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<meta http-equiv = "refresh" content = "4;url=http://localhost:4567/que"/>
+ <meta http-equiv="refresh" content="30">
 <body>
 
 <h2>  </h2>
@@ -11,7 +11,7 @@
 
 			<div class="card" style="width: 18rem;">
 				<div class="card-body">
-					<h5 class="card-title"><%= b.name %></h5>
+					<h5 class="card-title"><%= b.name %> <a class="btn" href="/pop" role="button">Next</a>  </h5>
 					<p class="card-text">
 						<ul class="list-group list-group-flush">
 						  	 <% customers.each do |c| %>
@@ -37,7 +37,6 @@
 							    </div>
 							  </div>
 							</div>
-
 
 							 <% end %>
 					  </ul>
