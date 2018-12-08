@@ -10,8 +10,18 @@
 		   	 <% customers = b.wait_list %>
 
 			<div class="card" style="width: 18rem;">
+				
+					<% if customers[0] == nil %>
+					<div class="card-body">
+					<h5 class="card-title"><%= b.name %>  </h5>
+						<p class="card-text">
+						<ul class="list-group list-group-flush">  </ul>
+					</p>
+				</div>
+
+					<% else %>
 				<div class="card-body">
-					<h5 class="card-title"><%= b.name %> <a class="btn" href="/pop" role="button">Next</a>  </h5>
+					<h5 class="card-title"><%= b.name %> <a class="btn" href="/pop/<%= customers[0].id %>" role="button">Next</a>  </h5>
 					<p class="card-text">
 						<ul class="list-group list-group-flush">
 						  	 <% customers.each do |c| %>
@@ -42,6 +52,7 @@
 					  </ul>
 					</p>
 				</div>
+				<% end %>
 			</div>
 	 	<% end %>
  	</div>
