@@ -111,7 +111,7 @@ button:hover {
           </p>
       </div>
 
-<% c = 10 
+<% c = 20 
   barber = 0;
   @barbers.each do |b|
   d = b.wait_list
@@ -142,8 +142,9 @@ button:hover {
 
 <div style="overflow:auto;">
   <div style="float:right;"> <br>
-    <button type="button" id="nextBtn" class="btn btn-info" onclick="nextPrev(1)">Next</button>
-   <!--  <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button> -->
+    <!-- <button type="button" id="nextBtn" class="btn btn-info" onclick="nextPrev(1)">Next</button> -->
+    <button type="button" id="nextBtn" class="btn btn-dark" onclick="nextPrev(1)">Next</button>
+    <!-- <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button> -->
   </div>
 </div>
 
