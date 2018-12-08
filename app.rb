@@ -96,14 +96,15 @@ end
 
 
 post "/admin/addbarber" do 
-	if params["name"]
+	if params["name"] != ""
 		b = Barber.new
 		b.name = params["name"]
 	
 		b.save
 		redirect "/admin"
 	else
-		return "missing information"
+		flash[:error] = "Must enter a name for new barber "
+		redirect "/admin"
 	end
 end	
 
