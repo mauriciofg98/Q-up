@@ -130,7 +130,7 @@ button:hover {
   <select class="custom-select" id='barber.id' name='id' type='text' style="font-style:italic">
     <option value= "<%= barber %>" selected>Next Available / Siguiente disponible:</option>
     <% @barbers.each do |b| %>
-    <option value="<%= b.id%>"> <%= b.name %> </option><br><br>
+    <option value="<%= b.id%>"> <%= b.name %> <%= b.wait_list.length %></option><br><br>
     <% end %>
   </select>
   </p>
