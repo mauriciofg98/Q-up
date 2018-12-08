@@ -73,11 +73,11 @@ get "/Queue" do
 	b = Barber.get(params["id"])
 	n = params["name"]
 	cost = 0
-	if hairtype == "Regular Cut" || hairtype == "Full-head shave"
+	if hairtype == "Regular Cut" || hairtype == "FullHead Shave"
 		cost += 15
 	elsif hairtype == "Fade Cut"
 		cost += 20
-	elsif hairtype == "Clean-up"
+	elsif hairtype == "CleanUp"
 		cost += 10
 	end
 
