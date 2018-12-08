@@ -6,5 +6,45 @@ p{
 </style>
 
 <div align = "center">
+<div class="card-group" padding: 10px;>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Add Barber</h5>
+     <form action="/admin/addbarber" method="POST">
+	<div>
+		<h4>Adding a new Barber!</h4>
+	</div>
+	<br>
+	<div>
+		<label>Full Name</label>
+		<input type="text" name="name">
+	</div>
+	<br>
+	<input type="submit" value="Submit">
+	<br>
+</form>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">delete barber</h5>
+     <form action="/admin/addbarber" method="POST">
+	<div>
+		<h4>Choose a Barber to delete</h4>
+	</div>
+	<br>
+	<div>
+		<ul class="list-group">
+		<% @barbers.each do |b| %>
+   			<li> <a href = "/admin/delete/<%= b.id %>" class= "list-group-item"><%= b.name %> </a>  </li>
+ 		<% end %>
+		</ul>
+	</div>
+	<br>
+	<br>
+</form>
 
+    </div>
+  </div>
+</div>
 </div>

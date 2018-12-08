@@ -82,8 +82,10 @@ get "/Queue" do
 end
 
 get "/admin" do 
+
 	authenticate!
 	if current_user.administrator 
+	@barbers = Barber.all
 	erb :admin, :layout => :admin_layout
 	#flash[:success] = "succesfully logged in"
 	end
@@ -99,7 +101,7 @@ post "/admin/addbarber" do
 		b.name = params["name"]
 	
 		b.save
-		return "succesful"
+		redirect "/admin"
 	else
 		return "missing information"
 	end
@@ -119,7 +121,7 @@ get "/admin/delete/:id" do
 	if current_user.administrator 
 		b = Barber.get(params[:id])
 		b.destroy
-		redirect "/admin/delete"
+		redirect "/admin"
 	else
 	redirect "/login"
 end
