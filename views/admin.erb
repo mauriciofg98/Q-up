@@ -8,30 +8,33 @@ ul {
 .card {
 	margin-top: 160px;
 }
+body {
+	background-color: #f1f1f1;
+}
 </style>
 
+
 <div align = "center">
-<div class="card-group" padding: 10px;>
-  <div class="card">
-    <div class="card-body">
-<!--       <h5 class="card-title">Add Barber</h5> -->
-     <form action="/admin/addbarber" method="POST">
-    <br><br>
-	<div>
-		<h4>Add a new Barber!</h4>
+	<div class="card-group" padding: 10px;>
+  		<div class="card">
+    		<div class="card-body">
+				<!--       <h5 class="card-title">Add Barber</h5> -->
+     			<form action="/admin/addbarber" method="POST">
+    			<br><br>
+				<div>
+					<h4>Add a new Barber!</h4>
+				</div>
+				<br><br><label>Full Name:</label>
+			<div>
+				<input type="text" name="name">
+			</div>
+			<br><br><br>
+			<input type="submit" value="Submit">
+			<br>
+				</form>
+    	</div>
 	</div>
-	<br><br>
-	<div>
-		<label>Barber's Full Name</label>
-		<input type="text" name="name">
-	</div>
-	<br><br><br>
-	<input type="submit" value="Submit">
-	<br>
-</form>
-    </div>
-  </div>
-  <div class="card">
+	<div class="card">
     <div class="card-body">
 <!--       <h5 class="card-title">delete barber</h5> -->
      <form action="/admin/addbarber" method="POST">
