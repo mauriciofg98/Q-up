@@ -30,6 +30,7 @@ class Queueitem
 
 	property :id, Serial
 	property :name, Text
+	property :price, Integer
 	property :bid, Integer
 
 	def barber 
@@ -71,12 +72,26 @@ get "/Queue" do
 	beardtype = params["beardtype"]
 	b = Barber.get(params["id"])
 	n = params["name"]
+	cost = 0
+	if hairtype == "Regular Cut" || hairtype == "Full-head shave"
+		cost += 15
+	elsif hairtype == "Fade Cut"
+		cost += 20
+	elsif hairtype == "Clean-up"
+		cost += 10
+	end
+
+	if beardtype != "N/A"
+		cost += 10
+	end
 
 
 	q = Queueitem.new
 	q.name = n
 	q.bid = b.id
+	q.price = cost
 	q.save
+	@cus = q
 
 	erb :index4
 end
