@@ -19,6 +19,8 @@ class Barber
 
 	property :id, Serial
 	property :name, Text
+	property :total, Integer, :default => 0
+	property :available, Boolean, :default => false
 	#fill in the rest
 	def wait_list
 		return Queueitem.all(bid: id)
@@ -63,8 +65,14 @@ end
 # if they are not signed in, current_user will be nil
 
 get "/" do
-	@barbers = Barber.all
+
+	@barbers = Barber.all(available: true)
+if @barbers != nil
 	erb :index
+else 
+	return "hello"
+end
+
 end
 
 get "/Queue" do
@@ -85,6 +93,8 @@ get "/Queue" do
 		cost += 10
 	end
 
+	b.total += cost
+	b.save
 
 	q = Queueitem.new
 	q.name = n
@@ -162,6 +172,30 @@ get "/pop/:id" do
 end
 
 get "/que" do
-	@barbers = Barber.all
+	@barbers = Barber.all(available: true)
 	erb :view
+end
+
+get "/sign_in" do 
+	@barbers = Barber.all(available: false)
+	erb :in
+end
+
+get "/sign_in/:id" do
+		b = Barber.get(params[:id])
+		b.available = true
+		b.save
+		redirect "/que"
+end
+
+get "/sign_out" do 
+	@barbers = Barber.all(available: true)
+	erb :out
+end
+
+get "/sign_out/:id" do
+		b = Barber.get(params[:id])
+		b.available = false
+		b.save
+		redirect "/que"
 end
